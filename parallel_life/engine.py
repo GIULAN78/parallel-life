@@ -1,6 +1,7 @@
 """Parallel Life - simulation engine."""
 import json
 import random
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -10,6 +11,19 @@ STATS = ["health", "money", "happiness", "relationships", "career"]
 
 def load_json(name):
     with open(DATA_DIR / name, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def city_slug(name):
+    text = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
+    return "-".join(text.lower().split())
+
+
+def load_city_events(city):
+    path = DATA_DIR / "cities" / f"{city_slug(city)}.json"
+    if not path.exists():
+        return []
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 

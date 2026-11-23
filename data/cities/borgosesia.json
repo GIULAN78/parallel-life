@@ -1,0 +1,4 @@
+[
+  {"id": "borgosesia_valsesia_life", "min_age": 18, "max_age": 90, "max_times": 3, "weight": 2, "text": "Life in the Valsesia is quiet, and you know almost everyone in town.", "effects": {"relationships": 5, "happiness": 3}},
+  {"id": "borgosesia_school_job", "min_age": 24, "max_age": 60, "once": true, "weight": 2, "text": "You get a position at a local school in Borgosesia.", "effects": {"career": 8, "money": 6}, "tags": ["employed"]}
+]

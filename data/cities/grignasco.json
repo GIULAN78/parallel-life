@@ -1,0 +1,5 @@
+[
+  {"id": "grignasco_sesia_walks", "min_age": 10, "max_age": 100, "max_times": 3, "weight": 2, "text": "You spend a free afternoon along the Sesia river, close to home.", "effects": {"happiness": 4, "health": 1}},
+  {"id": "grignasco_monte_rosa_trip", "min_age": 15, "max_age": 75, "max_times": 3, "weight": 2, "text": "A day in the mountains of the upper Valsesia, with the Monte Rosa in the distance, clears your head.", "effects": {"happiness": 6, "health": 2}},
+  {"id": "grignasco_local_work", "min_age": 20, "max_age": 60, "once": true, "weight": 2, "requires": ["hometown"], "text": "You find steady work in a local business in the Valsesia area.", "effects": {"money": 6, "career": 5}, "tags": ["employed"]}
+]

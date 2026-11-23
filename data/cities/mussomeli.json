@@ -1,0 +1,5 @@
+[
+  {"id": "mussomeli_castle", "min_age": 8, "max_age": 100, "max_times": 3, "weight": 2, "text": "You climb up to the castle on its rock and look at the Sicilian countryside below.", "effects": {"happiness": 5}},
+  {"id": "mussomeli_land_work", "min_age": 18, "max_age": 70, "max_times": 2, "weight": 2, "text": "You work the land with your family, as many in the area have done for generations.", "effects": {"money": 4, "health": 1, "relationships": 3}},
+  {"id": "mussomeli_leave_island", "min_age": 18, "max_age": 35, "once": true, "weight": 2, "excludes": ["hometown"], "text": "Like many from the interior of Sicily, you leave for work in the North.", "effects": {"career": 6, "money": 5, "relationships": -5}}
+]

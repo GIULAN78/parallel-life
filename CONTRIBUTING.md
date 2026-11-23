@@ -43,3 +43,7 @@ Aging, event frequency and the health effect of each habit are plain numbers. Ch
 - Keep texts short and neutral.
 - Do not include real people or private data.
 - Open an issue before large changes.
+
+## Add your city (`data/cities/`)
+
+Create a file named after your city in lowercase, with dashes instead of spaces and no accents (for example `data/cities/grignasco.json`). It contains a list of events in the same format as above. When a player types that city, its events are added to the general ones. Keep them true to the place and respectful of its people.
