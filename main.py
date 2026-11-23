@@ -1,6 +1,8 @@
 """Parallel Life - text prototype. Run: python3 main.py"""
 from parallel_life.engine import STATS, Avatar, apply_turning_point, load_json, simulate
 
+DEFAULT_END_AGE = 100
+
 
 def ask(prompt, default=None):
     value = input(prompt).strip()
@@ -25,7 +27,7 @@ def main():
     tp = turning_points[choice]
     apply_turning_point(avatar, tp)
 
-    end_age = int(ask("Simulate until age (default 65): ", "65"))
+    end_age = int(ask(f"Simulate until age (default {DEFAULT_END_AGE}): ", str(DEFAULT_END_AGE)))
     simulate(avatar, events, tp["age"], end_age)
 
     print(f"\n--- The parallel life of {avatar.name} in {avatar.city} ---")
