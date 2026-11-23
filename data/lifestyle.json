@@ -1,0 +1,38 @@
+{
+  "smoking": {
+    "question": "Smoking",
+    "default": "never",
+    "options": [
+      {"value": "never", "label": "Never smoked", "health": 0.0},
+      {"value": "former", "label": "Former smoker", "health": -0.1},
+      {"value": "smoker", "label": "Smoker", "health": -0.4}
+    ]
+  },
+  "activity": {
+    "question": "Physical activity",
+    "default": "moderate",
+    "options": [
+      {"value": "low", "label": "Sedentary", "health": -0.15},
+      {"value": "moderate", "label": "Moderate", "health": 0.1},
+      {"value": "high", "label": "Very active", "health": 0.25}
+    ]
+  },
+  "diet": {
+    "question": "Diet",
+    "default": "average",
+    "options": [
+      {"value": "poor", "label": "Poor", "health": -0.2},
+      {"value": "average", "label": "Average", "health": 0.0},
+      {"value": "good", "label": "Balanced", "health": 0.15}
+    ]
+  },
+  "alcohol": {
+    "question": "Alcohol",
+    "default": "moderate",
+    "options": [
+      {"value": "none", "label": "None", "health": 0.0},
+      {"value": "moderate", "label": "Moderate", "health": 0.0},
+      {"value": "heavy", "label": "Heavy", "health": -0.3}
+    ]
+  }
+}

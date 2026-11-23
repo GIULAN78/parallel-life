@@ -1,0 +1,5 @@
+{
+  "aging_start_age": 65,
+  "aging_health_per_year": 0.33,
+  "event_chance": 0.7
+}

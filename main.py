@@ -9,6 +9,24 @@ def ask(prompt, default=None):
     return value if value else default
 
 
+def ask_lifestyle(lifestyle):
+    chosen = {}
+    print("\nYour lifestyle (Enter keeps the default):")
+    for key, section in lifestyle.items():
+        options = section["options"]
+        print(f"\n{section['question']}:")
+        default_index = 1
+        for i, option in enumerate(options, 1):
+            marker = ""
+            if option["value"] == section["default"]:
+                default_index = i
+                marker = " (default)"
+            print(f"  {i}. {option['label']}{marker}")
+        index = int(ask("Number: ", str(default_index))) - 1
+        chosen[key] = options[index]["value"]
+    return chosen
+
+
 def main():
     print("=== PARALLEL LIFE ===")
     print("Live the life you didn't choose.\n")
@@ -19,6 +37,10 @@ def main():
 
     turning_points = load_json("turning_points.json")
     events = load_json("events.json")
+    config = load_json("config.json")
+    lifestyle = load_json("lifestyle.json")
+
+    avatar.lifestyle = ask_lifestyle(lifestyle)
 
     print("\nPick your turning point:")
     for i, tp in enumerate(turning_points, 1):
@@ -28,7 +50,7 @@ def main():
     apply_turning_point(avatar, tp)
 
     end_age = int(ask(f"Simulate until age (default {DEFAULT_END_AGE}): ", str(DEFAULT_END_AGE)))
-    simulate(avatar, events, tp["age"], end_age)
+    simulate(avatar, events, tp["age"], end_age, config, lifestyle)
 
     print(f"\n--- The parallel life of {avatar.name} in {avatar.city} ---")
     print(f"{avatar.birth_year + tp['age']} (age {tp['age']}): {tp['label']}.")
@@ -36,7 +58,7 @@ def main():
         print(f"{year} (age {age}): {text}")
     print("\nFinal stats:")
     for stat in STATS:
-        print(f"  {stat:<14} {avatar.stats[stat]:>3}")
+        print(f"  {stat:<14} {round(avatar.stats[stat]):>3}")
 
 
 if __name__ == "__main__":

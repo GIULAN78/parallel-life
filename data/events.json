@@ -8,8 +8,17 @@
   {"id": "city_rent", "min_age": 22, "max_age": 45, "max_times": 2, "weight": 2, "requires": ["bigcity"], "text": "Rent in the big city eats most of your salary.", "effects": {"money": -8, "happiness": -4}},
   {"id": "meet_partner", "min_age": 22, "max_age": 45, "once": true, "weight": 3, "excludes": ["partner"], "text": "You meet someone special.", "effects": {"relationships": 12, "happiness": 10}, "tags": ["partner"]},
   {"id": "family", "min_age": 27, "max_age": 45, "once": true, "weight": 2, "requires": ["partner"], "text": "You start a family.", "effects": {"relationships": 10, "happiness": 8, "money": -6}, "tags": ["family"]},
-  {"id": "health_scare", "min_age": 40, "max_age": 80, "max_times": 2, "weight": 2, "text": "A health scare makes you rethink your priorities.", "effects": {"health": -10, "happiness": -3}},
-  {"id": "new_hobby", "min_age": 18, "max_age": 80, "max_times": 2, "weight": 2, "text": "You take up a new hobby that brightens your days.", "effects": {"happiness": 6, "health": 2}},
+  {"id": "health_scare", "min_age": 40, "max_age": 90, "max_times": 2, "weight": 2, "health_risk": true, "text": "A health scare makes you rethink your priorities.", "effects": {"health": -6, "happiness": -3}},
+  {"id": "new_hobby", "min_age": 18, "max_age": 95, "max_times": 2, "weight": 2, "text": "You take up a new hobby that brightens your days.", "effects": {"happiness": 6, "health": 2}},
   {"id": "promotion", "min_age": 28, "max_age": 58, "max_times": 3, "weight": 2, "requires": ["employed"], "text": "You get a promotion.", "effects": {"career": 8, "money": 8}},
-  {"id": "retirement", "min_age": 62, "max_age": 70, "once": true, "weight": 5, "text": "You retire and finally have time for yourself.", "effects": {"happiness": 8, "career": -20}}
+  {"id": "retirement", "min_age": 64, "max_age": 72, "once": true, "weight": 5, "text": "You retire and finally have time for yourself.", "effects": {"happiness": 8, "career": -20}},
+  {"id": "grandchildren", "min_age": 55, "max_age": 90, "once": true, "weight": 4, "requires": ["family"], "text": "Your first grandchild is born.", "effects": {"happiness": 10, "relationships": 8}},
+  {"id": "old_town_walks", "min_age": 66, "max_age": 100, "max_times": 3, "weight": 2, "text": "You spend your afternoons walking through the places of your life.", "effects": {"happiness": 4, "health": 1}},
+  {"id": "memoir", "min_age": 70, "max_age": 95, "once": true, "weight": 3, "text": "You write down the story of your life for those who come after.", "effects": {"happiness": 8}},
+  {"id": "old_age_illness", "min_age": 80, "max_age": 100, "max_times": 2, "weight": 2, "health_risk": true, "text": "An illness slows you down, and you lean on the people around you.", "effects": {"health": -5, "relationships": 3}},
+  {"id": "honored_by_town", "min_age": 70, "max_age": 100, "once": true, "weight": 2, "text": "Your community honors you for a lifetime in the area.", "effects": {"happiness": 10, "relationships": 6}},
+  {"id": "quit_smoking", "min_age": 25, "max_age": 70, "once": true, "weight": 2, "requires": ["smoking_smoker"], "text": "You finally quit smoking.", "effects": {"happiness": 4}, "set_lifestyle": {"smoking": "former"}},
+  {"id": "start_exercise", "min_age": 25, "max_age": 80, "once": true, "weight": 2, "requires": ["activity_low"], "text": "You start exercising regularly.", "effects": {"happiness": 4}, "set_lifestyle": {"activity": "moderate"}},
+  {"id": "change_diet", "min_age": 30, "max_age": 80, "once": true, "weight": 2, "requires": ["diet_poor"], "text": "You change how you eat, and you feel the difference.", "effects": {"happiness": 3}, "set_lifestyle": {"diet": "average"}},
+  {"id": "cut_alcohol", "min_age": 30, "max_age": 80, "once": true, "weight": 2, "requires": ["alcohol_heavy"], "text": "You cut down on alcohol.", "effects": {"happiness": 3}, "set_lifestyle": {"alcohol": "moderate"}}
 ]
