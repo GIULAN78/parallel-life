@@ -1,6 +1,7 @@
 """Parallel Life - text prototype. Run: python3 main.py"""
 from parallel_life.engine import (
-    CORE_VARIABLES, Avatar, apply_turning_point, load_city_events, load_json, simulate,
+    CORE_VARIABLES, Avatar, apply_turning_point, get_theme, load_city_events,
+    load_json, load_packs, simulate,
 )
 
 DEFAULT_END_AGE = 100
@@ -38,9 +39,8 @@ def main():
     avatar = Avatar(name=name, birth_year=birth_year, city=city)
 
     turning_points = load_json("turning_points.json")
-    events = load_json("events.json")
     city_events = load_city_events(city)
-    events = events + city_events
+    events = load_json("events.json") + load_packs() + city_events
     config = load_json("config.json")
     lifestyle = load_json("lifestyle.json")
 
@@ -57,6 +57,8 @@ def main():
     choice = int(ask("Number: ", "1")) - 1
     tp = turning_points[choice]
     apply_turning_point(avatar, tp)
+    theme = get_theme(city, avatar.birth_year + tp["age"])
+    print(f"Visual theme: {theme['name']} (background {theme['background']}, accent {theme['accent']})")
 
     end_age = int(ask(f"Simulate until age (default {DEFAULT_END_AGE}): ", str(DEFAULT_END_AGE)))
     simulate(avatar, events, tp["age"], end_age, config, lifestyle)

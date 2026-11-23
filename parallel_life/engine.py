@@ -30,6 +30,27 @@ def load_city_events(city):
         return json.load(f)
 
 
+def load_packs():
+    events = []
+    packs_dir = DATA_DIR / "packs"
+    if packs_dir.exists():
+        for path in sorted(packs_dir.glob("*.json")):
+            with open(path, encoding="utf-8") as f:
+                events.extend(json.load(f))
+    return events
+
+
+def get_theme(city, year):
+    themes = load_json("themes.json")
+    theme = dict(themes["default"])
+    for era in themes.get("eras", []):
+        if era["min_year"] <= year <= era["max_year"]:
+            theme.update(era)
+            break
+    theme.update(themes.get("cities", {}).get(city_slug(city), {}))
+    return theme
+
+
 def default_stats():
     return {v["id"]: float(v["start"]) for v in CORE_VARIABLES}
 
@@ -80,6 +101,9 @@ def lifestyle_score(avatar, lifestyle):
 
 def is_eligible(event, age, avatar):
     if not event["min_age"] <= age <= event["max_age"]:
+        return False
+    year = avatar.birth_year + age
+    if year < event.get("min_year", -10000) or year > event.get("max_year", 10000):
         return False
     max_times = 1 if event.get("once", False) else event.get("max_times", 1000)
     if avatar.counts.get(event["id"], 0) >= max_times:

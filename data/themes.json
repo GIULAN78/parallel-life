@@ -1,0 +1,12 @@
+{
+  "default": {"name": "Blue and gold", "background": "#143b8f", "surface": "#fffdf6", "accent": "#ffd04d", "text": "#0d2a78"},
+  "eras": [
+    {"name": "Sepia past", "min_year": 1900, "max_year": 1980, "background": "#5b4636", "surface": "#f4ead5", "accent": "#c8971f", "text": "#2e2118"},
+    {"name": "Contemporary", "min_year": 1981, "max_year": 2026, "background": "#143b8f", "surface": "#fffdf6", "accent": "#ffd04d", "text": "#0d2a78"},
+    {"name": "Bright future", "min_year": 2027, "max_year": 2200, "background": "#0b3b4a", "surface": "#eefafa", "accent": "#4de0d0", "text": "#06232b"}
+  ],
+  "cities": {
+    "mussomeli": {"accent": "#d97b29"},
+    "grignasco": {"accent": "#4f9d5d"}
+  }
+}

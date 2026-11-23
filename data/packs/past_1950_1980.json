@@ -1,0 +1,4 @@
+[
+  {"id": "past_first_television", "min_year": 1955, "max_year": 1975, "min_age": 5, "max_age": 60, "once": true, "weight": 2, "text": "The first television in the neighbourhood: the whole street gathers to watch it.", "effects": {"happiness": 5, "relationships": 4}},
+  {"id": "past_big_family_table", "min_year": 1950, "max_year": 1980, "min_age": 5, "max_age": 70, "max_times": 3, "weight": 2, "text": "Sunday lunch brings the whole extended family around one table.", "effects": {"relationships": 5, "happiness": 4}}
+]

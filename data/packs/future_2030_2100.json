@@ -1,0 +1,4 @@
+[
+  {"id": "future_remote_work", "min_year": 2027, "max_year": 2100, "min_age": 22, "max_age": 65, "once": true, "weight": 3, "text": "A remote job lets you work from your hometown for a company anywhere in the world.", "effects": {"career": 8, "money": 8, "happiness": 4}, "tags": ["employed"]},
+  {"id": "future_medical_progress", "min_year": 2035, "max_year": 2100, "min_age": 50, "max_age": 100, "once": true, "weight": 3, "text": "A new treatment, available at your local hospital, gives you more healthy years.", "effects": {"health": 8}}
+]

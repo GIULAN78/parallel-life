@@ -47,3 +47,15 @@ Aging, event frequency and the health effect of each habit are plain numbers. Ch
 ## Add your city (`data/cities/`)
 
 Create a file named after your city in lowercase, with dashes instead of spaces and no accents (for example `data/cities/grignasco.json`). It contains a list of events in the same format as above. When a player types that city, its events are added to the general ones. Keep them true to the place and respectful of its people.
+
+## Eras: past, present and future
+
+Any event can have `min_year` and `max_year`, so it only happens in that period. A person born in 1950 will see the events of their time. This lets anyone rebuild how a place used to be, or imagine how it could be.
+
+- Events valid for a whole era, in any city, go in `data/packs/` (one file per pack, for example `past_1950_1980.json`).
+- Events about one place go in `data/cities/<city>.json`, with years if they belong to a period.
+- Historical packs must describe places, trades and customs, never real or private people.
+
+## Colors and themes (`data/themes.json`)
+
+The palette changes with the era and the place: a default theme, one theme per era (by year range) and optional overrides for a single city, for example a different accent color.
