@@ -1,6 +1,6 @@
 """Parallel Life - text prototype. Run: python3 main.py"""
 from parallel_life.engine import (
-    STATS, Avatar, apply_turning_point, load_city_events, load_json, simulate,
+    CORE_VARIABLES, Avatar, apply_turning_point, load_city_events, load_json, simulate,
 )
 
 DEFAULT_END_AGE = 100
@@ -38,8 +38,9 @@ def main():
     avatar = Avatar(name=name, birth_year=birth_year, city=city)
 
     turning_points = load_json("turning_points.json")
+    events = load_json("events.json")
     city_events = load_city_events(city)
-    events = load_json("events.json") + city_events
+    events = events + city_events
     config = load_json("config.json")
     lifestyle = load_json("lifestyle.json")
 
@@ -65,8 +66,12 @@ def main():
     for year, age, text in avatar.timeline:
         print(f"{year} (age {age}): {text}")
     print("\nFinal stats:")
-    for stat in STATS:
-        print(f"  {stat:<14} {round(avatar.stats[stat]):>3}")
+    current_group = None
+    for var in CORE_VARIABLES:
+        if var["group"] != current_group:
+            current_group = var["group"]
+            print(f"\n  [{current_group}]")
+        print(f"    {var['label']:<16} {round(avatar.stats[var['id']]):>3}")
 
 
 if __name__ == "__main__":

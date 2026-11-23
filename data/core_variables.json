@@ -1,0 +1,18 @@
+[
+  {"id": "health", "label": "Health", "group": "Person", "start": 70},
+  {"id": "energy", "label": "Energy", "group": "Person", "start": 70},
+  {"id": "stress", "label": "Stress", "group": "Person", "start": 30},
+  {"id": "education", "label": "Education", "group": "Person", "start": 40},
+  {"id": "skills", "label": "Skills", "group": "Person", "start": 30},
+  {"id": "money", "label": "Money", "group": "Life", "start": 50},
+  {"id": "career", "label": "Career", "group": "Life", "start": 50},
+  {"id": "happiness", "label": "Happiness", "group": "Life", "start": 50},
+  {"id": "relationships", "label": "Relationships", "group": "Life", "start": 50},
+  {"id": "reputation", "label": "Reputation", "group": "Life", "start": 50},
+  {"id": "home", "label": "Home quality", "group": "Assets", "start": 40},
+  {"id": "property", "label": "Property", "group": "Assets", "start": 0},
+  {"id": "mobility", "label": "Vehicles", "group": "Assets", "start": 30},
+  {"id": "business", "label": "Business", "group": "Society", "start": 0},
+  {"id": "fame", "label": "Fame", "group": "Society", "start": 0},
+  {"id": "legal_risk", "label": "Legal risk", "group": "Society", "start": 0}
+]

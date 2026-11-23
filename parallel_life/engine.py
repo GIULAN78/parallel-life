@@ -6,12 +6,15 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-STATS = ["health", "money", "happiness", "relationships", "career"]
 
 
 def load_json(name):
     with open(DATA_DIR / name, encoding="utf-8") as f:
         return json.load(f)
+
+
+CORE_VARIABLES = load_json("core_variables.json")
+STATS = [v["id"] for v in CORE_VARIABLES]
 
 
 def city_slug(name):
@@ -28,9 +31,7 @@ def load_city_events(city):
 
 
 def default_stats():
-    stats = {s: 50.0 for s in STATS}
-    stats["health"] = 70.0
-    return stats
+    return {v["id"]: float(v["start"]) for v in CORE_VARIABLES}
 
 
 @dataclass
